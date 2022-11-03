@@ -1,0 +1,119 @@
+@import "../../style.scss";
+
+.rightbar {
+  @include themify($themes) {
+    flex: 3;
+    position: sticky;
+    top: calc(2rem + 20px);
+    height: calc(100vh - (2rem + 20px));
+    overflow: scroll;
+    background-color: themed("bgSoft");
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: 20px;
+
+      .item {
+        box-shadow: 0px 2px 5px 3px rgba(0, 0, 0, 0.09);
+        -webkit-box-shadow: 0px 2px 5px 3px rgba(0, 0, 0, 0.09);
+        -moz-box-shadow: 0px 2px 5px 3px rgba(0, 0, 0, 0.09);
+        padding: 10px;
+        overflow: scroll;
+        margin-bottom: 20px;
+        background-color: themed("bg");
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .more {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .icon {
+            padding: 2px;
+            border-radius: 9999px;
+            background-color: themed("bgSoft");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        span {
+          color: #808080;
+          font-weight: 400;
+          font-size: 13px;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 10px 0px;
+
+          .userInfo {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            position: relative;
+
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+
+            .online {
+              width: 0.5rem;
+              height: 0.5rem;
+              border-radius: 50%;
+              background-color: #048444;
+              position: absolute;
+              top: 0;
+              left: 1.9rem;
+            }
+
+            p {
+              color: themed("textColorSoft");
+              font-size: 12px;
+            }
+
+            span {
+              color: themed("textColor");
+              font-weight: 500;
+              font-size: 15px;
+            }
+          }
+
+          .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            button {
+              border: none;
+              padding: 5px;
+              color: #fff;
+              cursor: pointer;
+              border-radius: 5px;
+              font-weight: 500;
+
+              &:first-child {
+                background-color: #172c6d;
+              }
+              &:last-child {
+                background-color: #8c0c0c;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
